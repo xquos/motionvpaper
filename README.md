@@ -1,6 +1,6 @@
 # MotionVpaper 🎬
 
-https://raw.githubusercontent.com/xquos/motionvpaper/main/assets/demo.mp4
+https://github.com/xquos/motionvpaper/releases/download/v1.0.0/demo.mp4
 
 A clean, minimal GTK4/libadwaita GUI for managing [mpvpaper](https://github.com/GhostNaN/mpvpaper) video wallpapers on [Hyprland](https://hyprland.org/).
 
