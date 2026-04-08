@@ -1,8 +1,8 @@
 # MotionVpaper 🎬
 
-A clean, minimal GTK4/libadwaita GUI for managing [mpvpaper](https://github.com/GhostMF/mpvpaper) video wallpapers on [Hyprland](https://hyprland.org/).
+https://github.com/user-attachments/assets/demo.mp4
 
-![Dark theme UI with video thumbnails](https://img.shields.io/badge/theme-dark-0d0d0f)
+A clean, minimal GTK4/libadwaita GUI for managing [mpvpaper](https://github.com/GhostNaN/mpvpaper) video wallpapers on [Hyprland](https://hyprland.org/).
 
 ## Features
 
@@ -16,7 +16,7 @@ A clean, minimal GTK4/libadwaita GUI for managing [mpvpaper](https://github.com/
 ## Requirements
 
 - [Hyprland](https://hyprland.org/) (Wayland compositor)
-- [mpvpaper](https://github.com/GhostMF/mpvpaper) (video wallpaper backend)
+- [mpvpaper](https://github.com/GhostNaN/mpvpaper) (video wallpaper backend)
 - Python 3.10+
 - GTK4 + libadwaita (PyGObject)
 - ffmpeg (for thumbnails)
@@ -32,7 +32,7 @@ yay -S mpvpaper
 ## Install
 
 ```bash
-git clone https://github.com/seb95/motionvpaper.git
+git clone https://github.com/xquos/motionvpaper.git
 cd motionvpaper
 ```
 
@@ -41,6 +41,7 @@ cd motionvpaper
 ```bash
 mkdir -p ~/.local/share/applications
 cp motionvpaper.desktop ~/.local/share/applications/
+# Edit the Exec path in the .desktop file to match your install location
 update-desktop-database ~/.local/share/applications/
 ```
 
@@ -59,9 +60,6 @@ python3 main.py
 ```
 Or search for "MotionVpaper" in your app launcher.
 
-**Keyboard shortcuts** (Hyprland):
-- The app uses `SUPER+SPACE` → search "MotionVpaper" to launch
-
 **Workflow:**
 1. Click **Add Video** or the `+` card to add video files
 2. Select a video from the grid
@@ -79,7 +77,7 @@ Or search for "MotionVpaper" in your app launcher.
 
 ## How It Works
 
-MotionVpaper is a frontend for `mpvpaper` — it doesn't play videos itself. When you click Play, it spawns:
+MotionVpaper is a frontend for [mpvpaper](https://github.com/GhostNaN/mpvpaper) — it doesn't play videos itself. When you click Play, it spawns:
 
 ```
 mpvpaper -f -o "loop-file=yes" <monitor> <video_path>
