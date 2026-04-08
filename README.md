@@ -83,8 +83,6 @@ MotionVpaper is a frontend for [mpvpaper](https://github.com/GhostNaN/mpvpaper) 
 mpvpaper -f -o "loop-file=yes" <monitor> <video_path>
 ```
 
-The built-in watchdog checks every 5 seconds if mpvpaper is still running. If it crashes (a known issue in mpvpaper 1.8 with segfaults on loop), MotionVpaper automatically restarts it with the same video and monitors.
-
 ## License
 
 MIT
