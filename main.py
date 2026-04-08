@@ -209,6 +209,11 @@ def get_monitors() -> list[str]:
 def mpvpaper_stop():
     """Kill all running mpvpaper instances."""
     subprocess.run(["pkill", "-x", "mpvpaper"], capture_output=True)
+    # Wait for processes to actually die (up to 1s)
+    for _ in range(10):
+        if not mpvpaper_running():
+            break
+        time.sleep(0.1)
 
 
 def mpvpaper_running() -> bool:
@@ -427,7 +432,7 @@ class MainWindow(Adw.ApplicationWindow):
             "selected_video": self.selected_video,
             "monitor": self._last_monitor,
             "all_monitors": self._all_monitors,
-            "was_playing": mpvpaper_running(),
+            "was_playing": mpvpaper_running() or self._is_autostart_enabled(),
         }
         STATE_FILE.write_text(json.dumps(state))
 
@@ -731,6 +736,8 @@ class App(Adw.Application):
             state = json.loads(STATE_FILE.read_text())
             video = state.get("selected_video")
             if state.get("was_playing") and video and os.path.exists(video):
+                # Small delay for Hyprland to be ready on autostart
+                time.sleep(1.5)
                 monitors = self.win._get_selected_monitors()
                 if monitors:
                     mpvpaper_stop()
