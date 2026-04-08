@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=MotionVpaper
+Comment=Video wallpaper manager for Hyprland
+Exec=python3 /path/to/motionvpaper/main.py
+Icon=video-x-generic
+Terminal=false
+Type=Application
+Categories=AudioVideo;Video;
+Keywords=wallpaper;video;mpvpaper;hyprland;
+StartupNotify=true
